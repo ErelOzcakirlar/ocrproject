@@ -1,0 +1,120 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.iu.ocrproject.FirstFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/edit_username"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:hint="@string/name"
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"/>
+
+            <EditText
+                android:id="@+id/edit_surname"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:gravity="center_vertical"
+                android:hint="@string/surname"
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:singleLine="true"
+                android:imeOptions="actionNext"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@id/edit_password"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/username"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@id/button_login"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/edit_password_again"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@id/button_login"
+            android:layout_below="@id/edit_password"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/password_again"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:imeOptions="actionDone"/>
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/edit_password_again"
+            android:background="@drawable/rounded_back_button"
+            android:text="@string/signup"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

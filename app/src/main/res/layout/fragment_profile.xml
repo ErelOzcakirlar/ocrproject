@@ -1,0 +1,204 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.iu.ocrproject.ProfileFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/spinner_birth"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_back_spinner"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:weightSum="10"
+            android:layout_above="@+id/spinner_sex"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/birth"
+                android:textColor="#444"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_birth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|right"
+                android:singleLine="true"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/spinner"
+                android:tint="#666" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/spinner_sex"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_back_spinner"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:weightSum="10"
+            android:layout_above="@+id/spinner_likes"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/sex"
+                android:textColor="#444"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_sex"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|right"
+                android:singleLine="true"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/spinner"
+                android:tint="#666" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/spinner_likes"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_back_spinner"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:weightSum="10">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/likes"
+                android:textColor="#444"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_likes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|right"
+                android:singleLine="true"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/spinner"
+                android:tint="#666" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/spinner_dislikes"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_back_spinner"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:weightSum="10"
+            android:layout_below="@+id/spinner_likes"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:text="@string/dislikes"
+                android:textColor="#444"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/text_dislikes"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|right"
+                android:singleLine="true"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/spinner"
+                android:tint="#666" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/spinner_dislikes"
+            android:background="@drawable/rounded_back_button"
+            android:text="@string/save"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

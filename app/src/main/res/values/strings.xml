@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">OCRProject</string>
+    <string name="load_picture">resim yükle</string>
+    <string name="library_not_loaded">OpenCV yüklü değil</string>
+
+    <string name="login">giriş yap</string>
+    <string name="or">veya</string>
+    <string name="signup">kaydol</string>
+    <string name="password">Şifre</string>
+    <string name="username">Kullanıcı adı</string>
+    <string name="password_again">Şifre Tekrar</string>
+    <string name="name">Ad</string>
+    <string name="surname">Soyad</string>
+    <string name="wrong_login">Kullanıcı adı veya şifre yanlış</string>
+
+    <string name="camera">Kamera ile Çek</string>
+    <string name="gallery">Galeriden Al</string>
+    <string name="profile">Profili Düzenle</string>
+    <string name="exit">Çıkış Yap</string>
+    <string name="seperator_profile">Profil</string>
+    <string name="seperator_barcode">Barkod Okut</string>
+    <string name="likes">Arananlar</string>
+    <string name="dislikes">Kaçınılanlar</string>
+    <string name="save">kaydet</string>
+    <string name="sex">Cinsiyet</string>
+    <string name="birth">Doğum Yılı</string>
+    <string name="choose">Seç</string>
+</resources>

@@ -1,0 +1,219 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.iu.ocrproject.ActionFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:padding="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:id="@+id/text_seperator_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/seperator_barcode"
+            android:textColor="@color/colorTextSeperator"
+            android:textSize="19sp"
+            android:layout_above="@+id/button_gallery"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_seperator_two"
+            android:layout_alignTop="@id/text_seperator_two"
+            android:layout_toLeftOf="@+id/text_seperator_two">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_seperator_two"
+            android:layout_alignTop="@id/text_seperator_two"
+            android:layout_toRightOf="@+id/text_seperator_two">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/button_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_above="@+id/button_camera"
+            android:background="@drawable/rounded_back_button"
+            android:clickable="true"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:text="@string/gallery"
+                android:id="@+id/text_gallery"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/text_gallery"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/gallery"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/button_camera"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_above="@+id/text_seperator_one"
+            android:background="@drawable/rounded_back_button"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:text="@string/camera"
+                android:id="@+id/text_camera"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/text_camera"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/camera"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/text_seperator_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/seperator_profile"
+            android:textColor="@color/colorTextSeperator"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_seperator_one"
+            android:layout_alignTop="@id/text_seperator_one"
+            android:layout_toLeftOf="@+id/text_seperator_one">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_seperator_one"
+            android:layout_alignTop="@id/text_seperator_one"
+            android:layout_toRightOf="@+id/text_seperator_one">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/button_profile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/text_seperator_one"
+            android:background="@drawable/rounded_back_button_primary"
+            android:clickable="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:text="@string/profile"
+                android:id="@+id/text_profile"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/text_profile"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/profile"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/button_exit"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@+id/button_profile"
+            android:background="@drawable/rounded_back_button_red"
+            android:clickable="true"
+            android:layout_marginTop="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                android:textSize="22sp"
+                android:text="@string/exit"
+                android:id="@+id/text_exit"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="36dp"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/text_exit"
+                android:layout_marginRight="8dp"
+                android:src="@drawable/exit"
+                />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

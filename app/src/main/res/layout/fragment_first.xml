@@ -1,0 +1,116 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.iu.ocrproject.FirstFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+
+        <EditText
+            android:id="@+id/edit_username"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@+id/edit_password"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/username"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:singleLine="true"
+            android:imeOptions="actionNext"/>
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_above="@+id/button_login"
+            android:layout_marginBottom="16dp"
+            android:background="@android:color/white"
+            android:gravity="center_vertical"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp" />
+
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/rounded_back_button"
+            android:text="@string/login"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/text_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/or"
+            android:textColor="@color/colorTextSeperator"
+            android:textSize="19sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_or"
+            android:layout_alignTop="@id/text_or"
+            android:layout_below="@+id/button_login"
+            android:layout_toLeftOf="@+id/text_or">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/text_or"
+            android:layout_alignTop="@id/text_or"
+            android:layout_below="@+id/button_login"
+            android:layout_toRightOf="@+id/text_or">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:background="@color/colorTextSeperator" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/button_signup"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_below="@id/text_or"
+            android:background="@drawable/rounded_back_button"
+            android:text="@string/signup"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>
