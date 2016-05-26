@@ -8,6 +8,7 @@ import android.os.Environment;
 import android.util.Log;
 
 import org.opencv.android.Utils;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Rect;
 import org.opencv.core.Size;
@@ -20,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Algorithms {
 
@@ -38,14 +40,17 @@ public class Algorithms {
     }
 
     public static ArrayList<Integer> fetch(Bitmap bitmap){
-        Mat img = new Mat();
-        Utils.bitmapToMat(bitmap, img);
-        return fetch(img);
+        String path = writeBitmap(bitmap);
+        if(path.contentEquals("")){
+            return new ArrayList<>();
+        }else{
+            return fetch(path);
+        }
     }
 
     private static ArrayList<Integer> fetch(Mat img) {
 
-        Imgproc.threshold(img, img, 200, 255, Imgproc.THRESH_OTSU);
+        Imgproc.threshold(img, img, 200, 255, Imgproc.THRESH_BINARY+Imgproc.THRESH_OTSU);
 
         writeFile("otsu_barkod.png", img);
 
@@ -335,12 +340,6 @@ public class Algorithms {
 
     public static void copyAssets(Context context) {
         AssetManager assetManager = context.getAssets();
-        String[] files = null;
-        try {
-            files = assetManager.list("");
-        } catch (IOException e) {
-            Log.e("tag", "Failed to get asset file list.", e);
-        }
         for(int i=0; i < 11 ; i++) {
             String filename = String.valueOf(i) + ".png";
             InputStream in = null;
@@ -371,5 +370,24 @@ public class Algorithms {
         while((read = in.read(buffer)) != -1){
             out.write(buffer, 0, read);
         }
+    }
+
+    private static String writeBitmap(Bitmap bitmap){
+        String path;
+        try{
+
+            File file = new File(FOLDER, String.valueOf(new Date().getTime()) + ".png");
+            FileOutputStream fOut = new FileOutputStream(file);
+
+            path = file.getAbsolutePath();
+
+            bitmap.compress(Bitmap.CompressFormat.PNG, 85, fOut);
+            fOut.flush();
+            fOut.close();
+
+        }catch (IOException ex){
+            path = "";
+        }
+        return path;
     }
 }

@@ -8,8 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 import com.readystatesoftware.sqliteasset.SQLiteAssetHelper;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -148,11 +150,12 @@ public class BaseManager extends SQLiteAssetHelper {
 
     private Ingredient getIngredientById(int id){
         SQLiteDatabase database = getReadableDatabase();
-        Cursor cursor = database.query("ingredients",new String[]{"id","name"},"id=?",new String[]{String.valueOf(id)},null,null,null);
+        Cursor cursor = database.query("ingredients",new String[]{"id","name","warning"},"id=?",new String[]{String.valueOf(id)},null,null,null);
         Ingredient ingredient = new Ingredient();
         if (cursor.moveToFirst()){
             ingredient.id = cursor.getInt(0);
             ingredient.name = cursor.getString(1);
+            ingredient.message = cursor.getString(2);
         }
         cursor.close();
         return ingredient;
@@ -216,25 +219,40 @@ public class BaseManager extends SQLiteAssetHelper {
                 Cursor cursor = database.query("products",new String[]{"name"},"barcode=?",new String[]{barcode},null,null,null);
                 if(cursor.moveToFirst()){
                     String name = cursor.getString(0);
+
                     Set<Integer> ingredients = getIngredientsByProduct(barcode);
+
+                    Map<Integer,Ingredient> full_list = new HashMap<>();
+                    for(Integer item:ingredients){
+                        full_list.put(item,getIngredientById(item));
+                    }
+
                     Set<Integer> likes = getLikesByUser(username);
                     Set<Integer> dislikes = getDislikesByUser(username);
 
                     List<Ingredient> likes_result = new ArrayList<>();
                     for(Integer item:likes){
                         if(ingredients.contains(item)){
-                            likes_result.add(getIngredientById(item));
+                            likes_result.add(full_list.get(item));
                         }
                     }
 
                     List<Ingredient> dislikes_result = new ArrayList<>();
                     for(Integer item:dislikes){
                         if(ingredients.contains(item)){
-                            dislikes_result.add(getIngredientById(item));
+                            dislikes_result.add(full_list.get(item));
                         }
                     }
 
-                    callback.onResult(tag,true,name,likes_result,dislikes_result);
+                    List<Ingredient> WarningList = new ArrayList<>();
+                    for(Map.Entry<Integer,Ingredient> entry:full_list.entrySet()){
+                        String warning = entry.getValue().message;
+                        if(warning != null && !warning.contentEquals("")){
+                            WarningList.add(entry.getValue());
+                        }
+                    }
+
+                    callback.onResult(tag,true,name,likes_result,dislikes_result,WarningList);
                 }else{
                     callback.onResult(tag,false,"Ürün bulunamadı");
                 }

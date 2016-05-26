@@ -74,6 +74,7 @@ public class AnalyzeFragment extends Fragment implements BaseManager.IQuery {
             final String name = (String) result[1];
             List<Ingredient> likes = (List<Ingredient>) result[2];
             List<Ingredient> dislikes = (List<Ingredient>) result[3];
+            List<Ingredient> warnings = (List<Ingredient>) result[4];
             String to_message = "Sayın " + user.name + " " + user.surname + "\n";
             if (likes.size() > 0) {
                 if (dislikes.size() > 0) {
@@ -119,6 +120,16 @@ public class AnalyzeFragment extends Fragment implements BaseManager.IQuery {
                     to_message += "Ürünün içerisinde istediğiniz veya istemediğiniz herhangi bir madde bulunmamaktadır.";
                 }
             }
+
+            if(warnings.size() > 0){
+
+                to_message += "\n\nÜrün içerisinde bulunan sağlığa zararlı olabilecek maddeler :";
+
+                for (int i = 0; i < warnings.size(); i++) {
+                    to_message += "\n\n"+warnings.get(i).message;
+                }
+            }
+
             final String message = to_message;
             getActivity().runOnUiThread(new Runnable() {
                 @Override
